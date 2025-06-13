@@ -34,7 +34,9 @@ class DataIngestion:
             my_data = Proj1Data()
             dataframe = my_data.export_collection_as_dataframe(collection_name=self.data_ingestion_config.collection_name)
             logging.info(f"Shape of dataframe: {dataframe.shape}")
+            # This is just file path not the nested directories
             feature_store_file_path  = self.data_ingestion_config.feature_store_file_path
+            # first make nested dirs
             dir_path = os.path.dirname(feature_store_file_path)
             os.makedirs(dir_path,exist_ok=True)
             logging.info(f"Saving exported data into feature store file path: {feature_store_file_path}")
@@ -83,14 +85,10 @@ class DataIngestion:
             dataframe = self.export_data_into_feature_store()
 
             logging.info("Got the data from mongodb")
-
             self.split_data_as_train_test(dataframe)
 
             logging.info("Performed train test split on the dataset")
-
-            logging.info(
-                "Exited initiate_data_ingestion method of Data_Ingestion class"
-            )
+            logging.info("Exited initiate_data_ingestion method of Data_Ingestion class")
 
             data_ingestion_artifact = DataIngestionArtifact(trained_file_path=self.data_ingestion_config.training_file_path,
             test_file_path=self.data_ingestion_config.testing_file_path)

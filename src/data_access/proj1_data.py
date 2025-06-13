@@ -17,6 +17,7 @@ class Proj1Data:
         Initializes the MongoDB client connection.
         """
         try:
+            # object of MongoDBClient class
             self.mongo_client = MongoDBClient(database_name=DATABASE_NAME)
         except Exception as e:
             raise MyException(e, sys)

@@ -11,7 +11,7 @@ class TrainingPipelineConfig:
     artifact_dir: str = os.path.join(ARTIFACT_DIR, TIMESTAMP)
     timestamp: str = TIMESTAMP
 
-
+# At module level, whenever this module is imported this will be initiated.
 training_pipeline_config: TrainingPipelineConfig = TrainingPipelineConfig()
 
 @dataclass
@@ -22,3 +22,7 @@ class DataIngestionConfig:
     testing_file_path: str = os.path.join(data_ingestion_dir, DATA_INGESTION_INGESTED_DIR, TEST_FILE_NAME)
     train_test_split_ratio: float = DATA_INGESTION_TRAIN_TEST_SPLIT_RATIO
     collection_name:str = DATA_INGESTION_COLLECTION_NAME
+@dataclass
+class DataValidationConfig:
+    data_validation_dir: str = os.path.join(training_pipeline_config.artifact_dir, DATA_VALIDATION_DIR_NAME)
+    validation_report_file_path: str = os.path.join(data_validation_dir, DATA_VALIDATION_REPORT_FILE_NAME)
