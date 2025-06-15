@@ -66,8 +66,9 @@ MIN_SAMPLES_SPLIT_RANDOM_STATE: int = 101
 """
 MODEL Evaluation related constants
 """
+# push new model only when performance is better than previously loaded model than the set threshold
 MODEL_EVALUATION_CHANGED_THRESHOLD_SCORE: float = 0.02
-MODEL_BUCKET_NAME = "my-model-mlopsproj"
+MODEL_BUCKET_NAME = "my-model-mlopsprojm"
 MODEL_PUSHER_S3_KEY = "model-registry"
 
 
