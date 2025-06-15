@@ -14,12 +14,19 @@
 ## 🌟 Highlights
 
 ✅ Professional project structure using Python packaging best practices
+
 ✅ End-to-end pipeline: Data ingestion → Validation → Transformation → Training → Evaluation → Deployment
+
 ✅ MongoDB Atlas used as a scalable NoSQL data storage
+
 ✅ AWS S3 integration for model registry
+
 ✅ Containerized using Docker, deployed via GitHub Actions to AWS EC2
+
 ✅ CI/CD pipeline for seamless automation and delivery
+
 ✅ User-friendly prediction interface with FastAPI
+
 ✅ Self-hosted GitHub Runner on EC2 instance for scalable builds
 
 ---
