@@ -1,6 +1,0 @@
-import os
-from src.constants import AWS_ACCESS_KEY_ID_ENV_KEY, AWS_SECRET_ACCESS_KEY_ENV_KEY
-
-
-print(f"AWS_ACCESS_KEY_ID: {os.getenv(AWS_ACCESS_KEY_ID_ENV_KEY)}")
-print(f"AWS_SECRET_ACCESS_KEY: {os.getenv(AWS_SECRET_ACCESS_KEY_ENV_KEY)}")
