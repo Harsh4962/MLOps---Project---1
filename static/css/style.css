@@ -1,26 +1,29 @@
-/* styles.css */
+/* Base styles */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     margin: 0;
     background-color: #f4f6f8;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .container {
     width: 100%;
-    max-width: 500px;
+    max-width: 550px;
     background-color: #ffffff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
     text-align: center;
+    transition: background-color 0.3s ease;
 }
 
 h1 {
     color: #333;
+    margin-bottom: 20px;
 }
 
 form {
@@ -32,23 +35,34 @@ form {
 label {
     text-align: left;
     color: #555;
-    font-weight: bold;
+    font-weight: 600;
+    font-size: 14px;
 }
 
 input {
-    padding: 8px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: all 0.2s;
+}
+
+input:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
 }
 
 button {
-    padding: 10px;
+    padding: 12px;
     background-color: #007bff;
     color: #fff;
     border: none;
-    border-radius: 4px;
+    border-radius: 8px;
     cursor: pointer;
     font-size: 16px;
+    font-weight: 600;
+    transition: background-color 0.3s;
 }
 
 button:hover {
@@ -57,7 +71,7 @@ button:hover {
 
 .train-button {
     background-color: #28a745;
-    margin-top: 15px;
+    margin-top: 10px;
 }
 
 .train-button:hover {
@@ -65,9 +79,193 @@ button:hover {
 }
 
 .result {
-    margin-top: 20px;
+    margin-top: 25px;
 }
 
 .result h2 {
     color: #007bff;
+}
+
+/* Toggle Switch */
+.toggle-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    gap: 10px;
+}
+
+.toggle-label {
+    color: #555;
+    font-size: 14px;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 48px;
+    height: 24px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 24px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #007bff;
+}
+
+input:checked + .slider:before {
+    transform: translateX(24px);
+}
+
+/* Dark Mode */
+body.dark-mode {
+    background-color: #121212;
+    color: #f1f1f1;
+}
+
+body.dark-mode .container {
+    background-color: #1e1e1e;
+    color: #f1f1f1;
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.05);
+}
+
+body.dark-mode h1,
+body.dark-mode label,
+body.dark-mode .toggle-label {
+    color: #e0e0e0;
+}
+
+body.dark-mode input {
+    background-color: #2a2a2a;
+    color: #f9f9f9;
+    border: 1px solid #555;
+}
+
+body.dark-mode input::placeholder {
+    color: #bbbbbb;
+}
+
+body.dark-mode button {
+    background-color: #333;
+    color: #fff;
+}
+
+body.dark-mode button:hover {
+    background-color: #444;
+}
+
+body.dark-mode .train-button {
+    background-color: #2e7d32;
+}
+
+body.dark-mode .train-button:hover {
+    background-color: #1b5e20;
+}
+
+body.dark-mode .result h2 {
+    color: #90caf9;
+}
+/* Wrapping and top-bar alignment */
+body {
+  position: relative;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Top bar with toggle */
+.top-bar {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+}
+
+/* Toggle styling */
+.toggle-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.toggle-label {
+  font-size: 14px;
+  color: #333;
+}
+
+/* Switch UI */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 44px;
+  height: 24px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  border-radius: 34px;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  border-radius: 50%;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #2196f3;
+}
+
+input:checked + .slider:before {
+  transform: translateX(20px);
 }
