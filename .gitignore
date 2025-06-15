@@ -1,3 +1,4 @@
 imp_info.txt
 notebook/mongoDB_demo.ipynb
 artifact/
+.env
